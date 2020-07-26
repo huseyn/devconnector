@@ -9,8 +9,10 @@ import Alert from './components/layout/Alert';
 import store from './redux/store';
 
 import { loadUser } from './redux/actions/auth';
-import './App.css';
 import setAuthToken from './utils/setAuthToken';
+
+import './App.css';
+
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
