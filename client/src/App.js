@@ -19,7 +19,6 @@ import { loadUser } from './redux/actions/auth';
 import setAuthToken from './utils/setAuthToken';
 
 import './App.css';
-import { addEducation } from './redux/actions/profile';
 
 
 if (localStorage.token) {
