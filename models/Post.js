@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { post } = require('../routes/api/posts');
 const Schema = mongoose.Schema;
 
 const PostSchema = new Schema({
@@ -7,50 +6,50 @@ const PostSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'users'
     },
-    text:{
+    text: {
         type: String,
-        required:true
+        required: true
     },
     name: {
-        type:String
+        type: String
     },
     avatar: {
         type: String
     },
     likes: [
         {
-            user:{
-                type:Schema.Types.ObjectId,
+            user: {
+                type: Schema.Types.ObjectId,
                 ref: 'users'
             }
         }
     ],
-    comments:[
+    comments: [
         {
-            user:{
-                type:Schema.Types.ObjectId,
+            user: {
+                type: Schema.Types.ObjectId,
                 ref: 'users'
             },
-            text:{
-                type:String,
-                required:true
+            text: {
+                type: String,
+                required: true
             },
             name: {
-                type:String
+                type: String
             },
             avatar: {
                 type: String
             },
-            date:{
+            date: {
                 type: Date,
                 default: Date.now()
             }
         }
     ],
-    date:{
+    date: {
         type: Date,
         default: Date.now()
     }
 });
 
-module.exports = Post = mongoose.model('post',PostSchema);
+module.exports = mongoose.model('post', PostSchema);
